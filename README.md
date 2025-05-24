@@ -1,6 +1,7 @@
 # 19CS301Module-9
 ### EX: 9.1                                            MATRIX OPERATIONS
-### Aim: To Write a Python Program to subtract two matrices by reading the matrix from the user.
+### Aim:
+To Write a Python Program to subtract two matrices by reading the matrix from the user.
 ### Algorithm:
 
 STEP 1: Start.
@@ -49,7 +50,8 @@ print(C)
 ### Result: Thus, the given program is implemented and executed successfully .
 
 ### EX: 9.2 LIST COMPREHENSION
-### Aim: To Write a Python class program to generate all even numbers between 200 and 300 and store in a list using list comprehension.
+### Aim:
+To Write a Python class program to generate all even numbers between 200 and 300 and store in a list using list comprehension.
 ### Algorithm:
 STEP 1: Start.
 
@@ -89,7 +91,8 @@ obj.display()
 ### Result: Thus, the given program is implemented and executed successfully .
 
 ### EX: 9.3 ADVANCED LIST PROCESSING
-### Aim: To Write a Python program to Find the transpose of a matrix using list Comprehension.
+### Aim:
+To Write a Python program to add two matrix using list Comprehension.
 
 ### Algorithm:
 
@@ -101,7 +104,7 @@ STEP 3: Get the value of r and c from user.
 
 STEP 4: Define a function to create the matrix.
 
-STEP 5 : Using list comprehension find the transpose of the matrix.
+STEP 5 : Using list comprehension add the two matrix.
 
 STEP 6: Print the result.
 
@@ -109,30 +112,36 @@ STEP 7 : Stop.
 
 ### Program:
 ```
-def create(r,c):
-            M=[]
-        for i in range(int(r)):
-             R = []
-        for j in range(int(c)):
-             x = int(input())
-             R.append(x)
-           M.append(R)
- return M
-r,c = input().split()
-matrix = create(int(r),int(c))
-print(matrix)
-T = [[r[i]for r in matrix]for i in range(len(matrix[0]))]
- print(T)
+def create_matrix(n,m):
+    M=[]
+    for i in range(n):
+        row=[]
+        for j in range(m):
+            x=int(input())
+            row.append(x)
+        M.append(row)
+    return M 
+    
+r,c=input().split()
+r=int(r)
+c=int(c)
+A=create_matrix(r,c)
+B=create_matrix(r,c)
+print(A)
+print(B)
+T = [[A[i][j]+B[i][j] for j in range(len(A[0]))]for i in range(len(A))]
+print(T)
 ```
 ### Output:
-![image](https://github.com/user-attachments/assets/411a227a-f44d-4b1a-b489-c7592dddbb67)
+![image](https://github.com/gokulkrishnan2005/19CS301Module-9/blob/main/module%209-1.png)
 
 ### Result: Thus, the given program is implemented and executed successfully .
  
 
 
 ### EX: 9.4       TOEPLITZ MATRIX
-### Aim: To Write a Python Program to check whether the given matrix is Toeplitz Matrix.
+### Aim:
+To Write a Python Program to check whether the given matrix is Toeplitz Matrix.
 
 
 ### Algorithm:
@@ -187,5 +196,49 @@ if isThoeplitz(A):
 ![image](https://github.com/user-attachments/assets/0fb8f81b-ab07-4b3e-b273-035a0f38566d)
 
 ### Result: Thus, the given program is implemented and executed successfully.
- 
+
+
+ ### EX: 9.5 SEB- LIST COMPREHENSION
+### Aim:
+To Write a Python program to find the cube of all elements in a list using list comprehension.
+### Algorithm:
+Start
+
+Read an integer n (number of elements).
+
+Initialize an empty list l.
+
+Repeat steps 5–6, n times:
+
+Read a floating-point number x.
+
+Append x to the list l.
+
+Create a new list sq_l:
+
+For each element item in list l, compute item ** 3 and store it in sq_l.
+
+Print the original list l.
+
+Print the cubed list sq_l.
+
+End
+
+
+
+### Program:
+```
+n=int(input())
+l=[]
+for i in range(n):
+    x=float(input())
+    l.append(x)
+sq_l=[item**3 for item in l]
+print(l)
+print(sq_l)
+```
+### Output:
+ ![image](https://github.com/gokulkrishnan2005/19CS301Module-9/blob/main/m9%205th.png)
+
+### Result: Thus, the given program is implemented and executed successfully .
 
